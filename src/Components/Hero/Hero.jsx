@@ -3,9 +3,11 @@ import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ArrowRight, Sparkles, Github, Linkedin, MousePointer2, Zap, Globe, Layout } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function SadiaHero() {
     const containerRef = useRef(null);
+    const router = useRouter();
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -110,7 +112,8 @@ export default function SadiaHero() {
                     transition={{ delay: 1.3 }}
                     className="mt-14 flex flex-col sm:flex-row items-center gap-8"
                 >
-                    <motion.button
+                    <motion.a
+                        href="#works"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className="px-12 py-6 bg-slate-900 cursor-pointer text-white rounded-[2rem] font-bold flex items-center gap-4 hover:bg-rose-600 transition-all duration-500 shadow-2xl shadow-slate-300 group"
@@ -119,10 +122,10 @@ export default function SadiaHero() {
                         <div className="w-6 h-6 bg-white/20 rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                             <ArrowRight size={14} />
                         </div>
-                    </motion.button>
+                    </motion.a>
 
                     <div className="flex items-center gap-5">
-                        <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-slate-900 hover:border-slate-900 transition-all duration-300">
+                        <a href="https://github.com/sadia-120?tab=repositories" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-slate-900 hover:border-slate-900 transition-all duration-300">
                             <Github size={22} />
                         </a>
                         <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
