@@ -21,8 +21,8 @@ export default function SadiaFooter() {
     const socialLinks = [
         { icon: <Github size={20} />, href: "https://github.com/sadia-120", label: "Github" },
         { icon: <Facebook size={20} />, href: "https://www.facebook.com/sa.di.a.591003", label: "Facebook" },
-        { icon: <Instagram size={20} />, href: "https://www.instagram.com/sa.di.a.591003", label: "Instagram" },
-        { icon: <Twitter size={20} />, href: "https://twitter.com/sadiaaktershimu", label: "Twitter" },
+        { icon: <Instagram size={20} />, href: "https://www.instagram.com/sa_dia3649?igsh=MWdic3B5YTRsYTh4bQ==", label: "Instagram" },
+        { icon: <Twitter size={20} />, href: "https://www.instagram.com/sa_dia3649?igsh=MWdic3B5YTRsYTh4bQ==", label: "Twitter" },
     ];
 
     return (

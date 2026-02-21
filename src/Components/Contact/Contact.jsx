@@ -62,7 +62,7 @@ export default function SadiaContact() {
                         </div>
 
                         <div className="mt-16 flex gap-4">
-                            {[{ Icon: Github, href: "https://github.com/sadia-120" }, { Icon: Facebook, href: "https://www.facebook.com/sa.di.a.591003" }, { Icon: Instagram, href: "#" }].map((Icon, i) => (
+                            {[{ Icon: Github, href: "https://github.com/sadia-120" }, { Icon: Facebook, href: "https://www.facebook.com/sa.di.a.591003" }, { Icon: Instagram, href: "https://www.instagram.com/sa_dia3649?igsh=MWdic3B5YTRsYTh4bQ==" }].map((Icon, i) => (
                                 <a key={i} href={Icon.href} target="_blank" className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center text-slate-400 hover:text-rose-500 hover:border-rose-200 transition-all">
                                     <Icon.Icon size={20} />
                                 </a>
