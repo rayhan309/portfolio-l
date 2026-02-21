@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { User, Code2, Palette, Cpu, Rocket, Heart, Zap } from "lucide-react";
+import Image from "next/image";
 
 if (typeof window !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
@@ -44,11 +45,12 @@ export default function SadiaAbout() {
                     <div className="lg:col-span-5 relative reveal-item">
                         <div className="relative w-full aspect-square max-w-md mx-auto">
                             {/* Decorative Frame */}
-                            <div className="absolute inset-0 border-2 border-slate-900 rounded-[3rem] translate-x-4 translate-y-4 z-0" />
+                            <div className="absolute inset-0 border-2 border-slate-400 rounded-[3rem] translate-x-4 translate-y-4 z-0" />
                             {/* Image Placeholder with Gradient */}
                             <div className="absolute inset-0 bg-gradient-to-br from-rose-100 to-indigo-100 rounded-[3rem] z-10 overflow-hidden flex items-center justify-center">
                                 <User size={120} className="text-white/50" />
                                 {/* Real Image Thakle ekhane <Image /> use korben */}
+                                <Image src="/banner-image.png" alt="Sadia" width={500} height={500} />
                             </div>
                             {/* Floating Badge */}
                             <motion.div

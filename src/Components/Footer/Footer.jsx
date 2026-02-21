@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, ArrowUpRight, Heart, Facebook } from "lucide-react";
 
 export default function SadiaFooter() {
     const currentYear = new Date().getFullYear();
@@ -19,10 +19,10 @@ export default function SadiaFooter() {
     ];
 
     const socialLinks = [
-        { icon: <Github size={20} />, href: "#", label: "Github" },
-        { icon: <Linkedin size={20} />, href: "#", label: "LinkedIn" },
-        { icon: <Instagram size={20} />, href: "#", label: "Instagram" },
-        { icon: <Twitter size={20} />, href: "#", label: "Twitter" },
+        { icon: <Github size={20} />, href: "https://github.com/sadia-120", label: "Github" },
+        { icon: <Facebook size={20} />, href: "https://www.facebook.com/sa.di.a.591003", label: "Facebook" },
+        { icon: <Instagram size={20} />, href: "https://www.instagram.com/sa.di.a.591003", label: "Instagram" },
+        { icon: <Twitter size={20} />, href: "https://twitter.com/sadiaaktershimu", label: "Twitter" },
     ];
 
     return (
@@ -46,7 +46,7 @@ export default function SadiaFooter() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={scrollToTop}
-                        className="group flex flex-col items-center gap-4"
+                        className="group flex flex-col cursor-pointer items-center gap-4"
                     >
                         <div className="w-16 h-16 rounded-full border border-slate-700 flex items-center justify-center group-hover:bg-rose-500 group-hover:border-rose-500 transition-all duration-500">
                             <ArrowUpRight size={24} className="group-hover:rotate-45 transition-transform" />
@@ -88,7 +88,7 @@ export default function SadiaFooter() {
                             <ul className="space-y-2">
                                 {socialLinks.map((social) => (
                                     <li key={social.label}>
-                                        <a href={social.href} className="text-sm font-bold text-slate-300 hover:text-rose-500 transition-colors uppercase tracking-tight">
+                                        <a href={social.href} target="_blank" className="text-sm font-bold text-slate-300 hover:text-rose-500 transition-colors uppercase tracking-tight">
                                             {social.label}
                                         </a>
                                     </li>

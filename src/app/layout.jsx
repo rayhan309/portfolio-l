@@ -45,7 +45,7 @@ export const metadata = {
     siteName: "Sadia Portfolio",
     images: [
       {
-        url: "/og-image.jpg", // public folder-e ekti image rakhun jeta share korle dekhabe
+        url: "/banner-image.png", // public folder-e ekti image rakhun jeta share korle dekhabe
         width: 1200,
         height: 630,
         alt: "Sadia Portfolio Preview",

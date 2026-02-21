@@ -2,6 +2,9 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, Layout, Server, Zap, ArrowUpRight } from "lucide-react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { useRouter } from "next/router";
 
 // Local Projects Data (Database chara ekhane project add korun)
 const projects = [
@@ -12,8 +15,8 @@ const projects = [
         image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop",
         desc: "Complete employee and payroll management system with real-time updates.",
         tech: ["Next.js", "Socket.io", "MongoDB"],
-        live: "#",
-        github: "#"
+        live: "https://flexship-it.vercel.app/",
+        github: "https://github.com/sadia-120"
     },
     {
         id: 2,
@@ -22,8 +25,8 @@ const projects = [
         image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2632&auto=format&fit=crop",
         desc: "A premium shopping experience with SSL Commerz & dark mode support.",
         tech: ["React", "Node.js", "Redux"],
-        live: "#",
-        github: "#"
+        live: "https://fairbazar.vercel.app",
+        github: "https://github.com/sadia-120"
     },
     {
         id: 3,
@@ -32,8 +35,8 @@ const projects = [
         image: "https://images.unsplash.com/photo-1611746872915-64382b5c76da?q=80&w=2670&auto=format&fit=crop",
         desc: "Real-time messaging platform with group chat and file sharing.",
         tech: ["Socket.io", "React", "Express"],
-        live: "#",
-        github: "#"
+        live: "https://chatsnest.vercel.app/",
+        github: "https://github.com/sadia-120"
     },
     {
         id: 4,
@@ -42,8 +45,8 @@ const projects = [
         image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2671&auto=format&fit=crop",
         desc: "Modern landing page with complex Framer Motion animations.",
         tech: ["Next.js", "GSAP", "Tailwind"],
-        live: "#",
-        github: "#"
+        live: "https://xorit.vercel.app/",
+        github: "https://github.com/sadia-120"
     }
 ];
 
@@ -51,6 +54,7 @@ const categories = ["All", "Full-Stack", "E-Commerce", "UI/UX"];
 
 export default function SadiaWorks() {
     const [filter, setFilter] = useState("All");
+    const router = useRouter();
 
     const filteredProjects = filter === "All"
         ? projects
@@ -114,10 +118,10 @@ export default function SadiaWorks() {
 
                                     {/* Hover Overlay */}
                                     <div className="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center gap-4">
-                                        <a href={project.live} className="p-4 bg-white rounded-full text-slate-900 hover:bg-rose-500 hover:text-white transition-all">
+                                        <a href={project.live} target="_blank" className="p-4 bg-white rounded-full text-slate-900 hover:bg-rose-500 hover:text-white transition-all">
                                             <ExternalLink size={20} />
                                         </a>
-                                        <a href={project.github} className="p-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white hover:bg-white hover:text-slate-900 transition-all">
+                                        <a href={project.github} target="_blank" className="p-4 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white hover:bg-white hover:text-slate-900 transition-all">
                                             <Github size={20} />
                                         </a>
                                     </div>
@@ -147,6 +151,9 @@ export default function SadiaWorks() {
                                     </div>
 
                                     <motion.div
+                                        onClick={() => {
+                                            router.push(project.github)
+                                        }}
                                         whileHover={{ rotate: 45 }}
                                         className="p-3 border border-slate-100 rounded-2xl text-slate-300 group-hover:text-rose-500 group-hover:border-rose-200 transition-all"
                                     >
@@ -160,9 +167,9 @@ export default function SadiaWorks() {
 
                 {/* View All on GitHub (Optional) */}
                 <div className="mt-20 text-center">
-                    <button className="px-12 py-5 border-2 border-slate-100 rounded-[2rem] font-bold text-slate-900 hover:bg-slate-900 hover:text-white transition-all duration-500">
+                    <Link href="https://github.com/sadia-120" target="_blank" className="px-12 py-5 border-2 border-slate-100 rounded-[2rem] font-bold text-slate-900 hover:bg-slate-900 hover:text-white transition-all duration-500">
                         WANT TO SEE MORE? VISIT MY GITHUB
-                    </button>
+                    </Link>
                 </div>
 
             </div>

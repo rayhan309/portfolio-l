@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram, CheckCircle, Facebook } from "lucide-react";
 
 export default function SadiaContact() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,7 +47,7 @@ export default function SadiaContact() {
                                 </div>
                                 <div>
                                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Email Me</p>
-                                    <p className="text-lg font-bold text-slate-900">hello@sadia.com</p>
+                                    <p className="text-lg font-bold text-slate-900">sadia456745@gmail.com</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-6 group">
@@ -56,15 +56,15 @@ export default function SadiaContact() {
                                 </div>
                                 <div>
                                     <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Call Me</p>
-                                    <p className="text-lg font-bold text-slate-900">+880 1XXX XXXXXX</p>
+                                    <p className="text-lg font-bold text-slate-900">+880 1783-695240</p>
                                 </div>
                             </div>
                         </div>
 
                         <div className="mt-16 flex gap-4">
-                            {[Github, Linkedin, Instagram].map((Icon, i) => (
-                                <a key={i} href="#" className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center text-slate-400 hover:text-rose-500 hover:border-rose-200 transition-all">
-                                    <Icon size={20} />
+                            {[{ Icon: Github, href: "https://github.com/sadia-120" }, { Icon: Facebook, href: "https://www.facebook.com/sa.di.a.591003" }, { Icon: Instagram, href: "#" }].map((Icon, i) => (
+                                <a key={i} href={Icon.href} target="_blank" className="w-12 h-12 rounded-xl border border-slate-100 flex items-center justify-center text-slate-400 hover:text-rose-500 hover:border-rose-200 transition-all">
+                                    <Icon.Icon size={20} />
                                 </a>
                             ))}
                         </div>
@@ -85,24 +85,24 @@ export default function SadiaContact() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                             <div className="space-y-2">
                                                 <label className="text-[10px] font-black text-slate-400 uppercase ml-2">Your Name</label>
-                                                <input required name="name" type="text" placeholder="John Doe" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all" />
+                                                <input required name="name" type="text" placeholder="John Doe" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none text-gray-800 focus:ring-2 focus:ring-rose-500/20 transition-all" />
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-[10px] font-black text-slate-400 uppercase ml-2">Email Address</label>
-                                                <input required name="email" type="email" placeholder="john@example.com" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all" />
+                                                <input required name="email" type="email" placeholder="john@example.com" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none text-gray-800 focus:ring-2 focus:ring-rose-500/20 transition-all" />
                                             </div>
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black text-slate-400 uppercase ml-2">Subject</label>
-                                            <input required name="subject" type="text" placeholder="Project Inquiry" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all" />
+                                            <input required name="subject" type="text" placeholder="Project Inquiry" className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none text-gray-800 focus:ring-2 focus:ring-rose-500/20 transition-all" />
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-black text-slate-400 uppercase ml-2">Message</label>
-                                            <textarea required name="message" rows="5" placeholder="Tell me about your project..." className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500/20 transition-all resize-none"></textarea>
+                                            <textarea required name="message" rows="5" placeholder="Tell me about your project..." className="w-full px-6 py-4 rounded-2xl bg-white border border-slate-100 focus:outline-none text-gray-800 focus:ring-2 focus:ring-rose-500/20 transition-all resize-none"></textarea>
                                         </div>
                                         <button
                                             disabled={isSubmitting}
-                                            className="w-full py-5 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-rose-600 transition-all shadow-xl shadow-slate-200 disabled:opacity-50"
+                                            className="w-full py-5 cursor-pointer bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-rose-600 transition-all shadow-xl shadow-slate-200 disabled:opacity-50"
                                         >
                                             {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
                                             {!isSubmitting && <Send size={18} />}
@@ -126,8 +126,11 @@ export default function SadiaContact() {
                                         Expected response time: <strong>under 24 hours.</strong>
                                     </p>
                                     <button
-                                        onClick={() => setIsSent(false)}
-                                        className="px-8 py-3 text-slate-400 hover:text-slate-900 font-bold text-xs tracking-widest uppercase transition-all"
+                                        onClick={() => {
+                                            setIsSent(false)
+                                            setIsSubmitting(false)
+                                        }}
+                                        className="px-8 py-3 cursor-pointer text-slate-400 hover:text-slate-900 font-bold text-xs tracking-widest uppercase transition-all"
                                     >
                                         Send another message
                                     </button>

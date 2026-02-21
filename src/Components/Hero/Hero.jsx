@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
-import { ArrowRight, Sparkles, Github, Linkedin, MousePointer2, Zap, Globe, Layout } from "lucide-react";
+import { ArrowRight, Sparkles, Github, Linkedin, MousePointer2, Zap, Globe, Layout, Facebook } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 export default function SadiaHero() {
@@ -128,8 +128,8 @@ export default function SadiaHero() {
                         <a href="https://github.com/sadia-120?tab=repositories" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-slate-900 hover:border-slate-900 transition-all duration-300">
                             <Github size={22} />
                         </a>
-                        <a href="#" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
-                            <Linkedin size={22} />
+                        <a href="https://www.facebook.com/sa.di.a.591003" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center rounded-2xl border border-slate-200 text-slate-400 hover:text-white hover:bg-blue-600 hover:border-blue-600 transition-all duration-300">
+                            <Facebook size={22} />
                         </a>
                     </div>
                 </motion.div>

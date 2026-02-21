@@ -155,7 +155,7 @@ export default function SadiaServices() {
 
                             <button
                                 onClick={() => setSelectedService(null)}
-                                className="w-full py-5 bg-slate-900 text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-600 transition-all group"
+                                className="w-full py-5 bg-slate-900 cursor-pointer text-white rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-rose-600 transition-all group"
                             >
                                 LET'S DISCUSS <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                             </button>
